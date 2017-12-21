@@ -1,0 +1,10 @@
+ERROR - 18:21:43: java.net.MalformedURLException: unknown protocol: pathmap
+WARNING - 18:22:07: Convert Decorator
+ERROR - 18:22:07: java.io.FileNotFoundException: /Decorator/src/Texto.java (No such file or directory)
+ERROR - 18:22:07: java.io.FileNotFoundException: /Decorator/src/Texto.java (No such file or directory)
+WARNING - 18:22:53: Convert Decorator
+ERROR - 18:22:53: java.io.FileNotFoundException: /Decorator/src/Texto.java (No such file or directory)
+ERROR - 18:22:53: java.io.FileNotFoundException: /Decorator/src/Texto.java (No such file or directory)
+WARNING - 18:23:03: Convert Decorator
+ERROR - 18:23:03: java.io.FileNotFoundException: /Decorator/src/Texto.java (No such file or directory)
+ERROR - 18:23:03: java.io.FileNotFoundException: /Decorator/src/Texto.java (No such file or directory)

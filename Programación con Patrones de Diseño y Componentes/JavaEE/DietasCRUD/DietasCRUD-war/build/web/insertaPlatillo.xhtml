@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            table{
+                display: inline-table;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        Agregar nuevo platillo
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Nombre:" for="nombre" />
+                    <h:inputText id="nombre" value="#{platilloAdmin.platillo.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    <h:outputLabel value="Tipo:" for="tipo" title="Tipo"/>
+                    <h:selectOneMenu id="tipo" value="#{platilloAdmin.platillo.tipo}">
+                        <f:selectItem itemValue="Desayuno" itemLabel="Desayuno" />
+                        <f:selectItem itemValue="Colacion" itemLabel="Colacion" />
+                        <f:selectItem itemValue="Comida" itemLabel="Comida" />
+                        <f:selectItem itemValue="Cena" itemLabel="Cena" />
+                        <f:selectItem itemValue="Indistinto" itemLabel="Indistinto" />
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Cantidad:" for="cantidad" />
+                    <h:inputText id="cantidad" value="#{platilloAdmin.platillo.cantidad}" title="Cantidad" />
+                    <h:outputLabel value="Unidadmedida:" for="unidadmedida" />
+                    <h:inputText id="unidadmedida" value="#{platilloAdmin.platillo.unidadmedida}" title="Unidadmedida" />
+                </h:panelGrid>
+                <h:commandButton value="Guardar platillo" action="index" actionListener="#{platilloAdmin.guardar}"/>
+                <h:form>
+                    Agrega alimentos
+                    <h:selectOneMenu value="#{platilloAdmin.idAlimento}">
+                        <f:selectItems value="#{platilloAdmin.alimentos}" var="alimento" itemValue="#{alimento.idAlimento}" itemLabel="#{alimento.nombre}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Cantidad" for="cantidadIngrediente"/>
+                    <h:inputText id="cantidadIngrediente" value="#{platilloAdmin.ingrediente.cantidad}" required="true" requiredMessage="Se necesita"/>
+                    <h:commandButton value="Agregar ingrediente" action="insertaPlatillo" actionListener="#{platilloAdmin.guardarIngrediente}"></h:commandButton>
+                </h:form>
+            </h:form>
+        </f:view>
+        Ingredientes agregados:
+        <h:dataTable value="#{platilloAdmin.ingredientes}" var="item">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Ingrediente"/>
+                </f:facet>
+                <h:outputText value="#{item.idAlimento}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Cantidad"/>
+                </f:facet>
+                <h:outputText value="#{item.cantidad}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Unidad de medida"/>
+                </f:facet>
+                <h:outputText value="#{item.unidadmedida}"/>
+            </h:column>
+        </h:dataTable> 
+        <h:dataTable value="#{platilloAdmin.kilocalorias}" var="item">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Kilocalorias"/>
+                </f:facet>
+                <h:outputText value="#{item}"/>
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+

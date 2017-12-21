@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        CRUD de Alimentos
+        <h:form>
+            <h:commandButton value="Agregar Alimento" action="inserta" actionListener="#{alimentoAdmin.crear}"></h:commandButton>
+        </h:form>
+        <h:form>
+            <h:commandButton value="Ver alimentos" action="mostrar" actionListener="#{alimentoAdmin.getAlimentos}"></h:commandButton>
+        </h:form>
+        <h:form>
+            <h:commandButton value="Buscar Alimento" action="mostrarIndividual" actionListener="#{alimentoAdmin.crear}"></h:commandButton>
+        </h:form>
+        <br/>
+        CRUD de Platillo
+        <h:form>
+            <h:commandButton value="Agregar Platillo" action="insertaPlatillo" actionListener="#{platilloAdmin.crear}"></h:commandButton>
+        </h:form>
+        <h:form>
+            <h:commandButton value="Ver Platillos" action="mostrarPlatillos" actionListener="#{platilloAdmin.getPlatillos}"></h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+
